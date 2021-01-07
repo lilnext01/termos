@@ -116,7 +116,6 @@ async function starts() {
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const speed = require('performance-now')
 			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
-			const chats = (type === 'chat') ? body : (type === 'image' || type === 'video') ? caption : ''
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
@@ -504,10 +503,6 @@ async function starts() {
 				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
 					client.sendMessage(from, `Sukses unblock${body.slice(9)}@c.us`, text)
 				    break
-				case 'costum':
-					var teks = body.slice(8)
-					client.sendMessage(from, mek)
-					break
                 case 'quotemaker':
 					var gh = body.slice(12)
 					var quote = gh.split("|")[0];
