@@ -1,15 +1,5 @@
-me = client.user
-uptime = process.uptime()
 const help = (prefix) => { 
-	return `═══ 《 *GALIH BOT* 》 ═══
-─────────────────────
--❥ *GALIH BOT V.1.0*
--❥ *Owner : GALIH*
--❥ *Link* : wa.me/6289530863358
--❥ *Nomor Bot* : @${me.jid.split('@')[0]}
--❥ *Prefix* : ${prefix}
--❥ *Bot telah berjalan selama:*
--❥ *${kyun(uptime)}*
+	return `
 ─────────────────────
 ═══ 《 *Galih Menu* 》 ═══
 ─────────────────────
@@ -120,4 +110,5 @@ const help = (prefix) => {
 -❥ *${prefix}tts*
 -❥ *${prefix}hidetag*`
 }
+
 exports.help = help
