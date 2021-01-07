@@ -185,7 +185,6 @@ async function starts() {
 			switch(command) {
 				case 'help':
 				case 'menu':
-				case 'info':
 					client.sendMessage(from, help(prefix), text)
 					break
 				case 'blocklist':
